@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="SqlFormatter">
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="autoload" value="{81883f78-d33e-4fde-8a2c-6318c81d3c60}" />
+    <GuidSymbol name="SqlFormatter" value="{370a4d64-9e03-4846-8b00-49fcb57d817e}">
+      
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
