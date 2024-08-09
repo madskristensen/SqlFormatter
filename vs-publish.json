@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "categories": [ "coding", "database", "programming languages" ],
+  "categories": [ "coding", "programming languages" ],
   "identity": {
     "internalName": "SqlFormatter",
     "tags": [ "sql, tsql", "formatter" ]
