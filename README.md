@@ -5,3 +5,5 @@
 ----------------------------------------
 
 Formats T-SQL code to a consistent and readable layout.
+
+![Options](art/options.png)

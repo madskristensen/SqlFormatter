@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Text;
 
 namespace SqlFormatter
@@ -15,6 +14,7 @@ namespace SqlFormatter
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.SqlFormatterString)]
+    [ProvideOptionPage(typeof(OptionsProvider.GeneralOptions), "SQL Server Tools", "Formatting", 0, 0, true, SupportsProfiles = true)]
     [ProvideAutoLoad(PackageGuids.autoloadString, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideUIContextRule(PackageGuids.autoloadString,
         name: "auto load",
@@ -50,7 +50,7 @@ namespace SqlFormatter
                     DocumentView document = await VS.Documents.GetActiveDocumentViewAsync();
                     ITextBuffer buffer = document.TextBuffer;
 
-                    _ = FormatCommandHandler2.Format(buffer, 0, buffer.CurrentSnapshot.Length);
+                    await FormatCommandHandler2.FormatAsync(buffer, 0, buffer.CurrentSnapshot.Length);
 
                 }).FireAndForget();
             }
