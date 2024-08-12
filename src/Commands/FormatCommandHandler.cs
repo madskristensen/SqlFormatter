@@ -19,6 +19,7 @@ namespace SqlFormatter
         ICommandHandler<FormatDocumentCommandArgs>
     //,ICommandHandler<FormatSelectionCommandArgs>
     {
+        public static RatingPrompt _ratingPrompt = new("", Vsix.Name, General.Instance);
         public string DisplayName => nameof(FormatCommandHandler2);
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)
@@ -52,6 +53,8 @@ namespace SqlFormatter
                     _ = edit.Replace(start, length, formattedSql);
                     _ = edit.Apply();
                 }
+
+                _ratingPrompt.RegisterSuccessfulUsage();
 
                 return false;
             }

@@ -9,7 +9,7 @@ namespace SqlFormatter
         public class GeneralOptions : BaseOptionPage<General> { }
     }
 
-    public class General : BaseOptionModel<General>
+    public class General : BaseOptionModel<General>, IRatingConfig
     {
         [Category("General")]
         [DisplayName("Indent string")]
@@ -85,5 +85,9 @@ namespace SqlFormatter
         [DisplayName("New statement line breaks")]
         [DefaultValue(2)]
         public int NewStatementLineBreaks { get; set; } = 2;
+
+        // Used for rating requests
+        [Browsable(false)]
+        public int RatingRequests { get; set; }
     }
 }

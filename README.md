@@ -15,6 +15,14 @@ Formats T-SQL code to a consistent and readable layout.
 
 Invoke the *Format Document* command or `CTRL+K, CTRL+D` to format the document using the settings specified in the options. If no settings has been modified, the default settings will be used.
 
+**Before:**
+
+![Before](art/before.png)
+
+**After:**
+
+![After](art/after.png)
+
 ## Options
 
 ![Options](art/options.png)
