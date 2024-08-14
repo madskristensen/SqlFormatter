@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Composition;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Text;
@@ -11,16 +10,14 @@ using PoorMansTSqlFormatterRedux.Formatters;
 namespace SqlFormatter
 {
     [Export(typeof(ICommandHandler))]
-    [Name(nameof(FormatCommandHandler2))]
+    [Name(nameof(FormatCommandHandler))]
     [ContentType("SQL")]
     [ContentType("SQL Server Tools")]
     [Order(Before = "FormatCommandHandler")]
-    public class FormatCommandHandler2 :
-        ICommandHandler<FormatDocumentCommandArgs>
-    //,ICommandHandler<FormatSelectionCommandArgs>
+    public class FormatCommandHandler : ICommandHandler<FormatDocumentCommandArgs>
     {
         public static RatingPrompt _ratingPrompt = new("", Vsix.Name, General.Instance);
-        public string DisplayName => nameof(FormatCommandHandler2);
+        public string DisplayName => nameof(FormatCommandHandler);
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)
         {
@@ -29,17 +26,9 @@ namespace SqlFormatter
             return false;
         }
 
-        public bool ExecuteCommand(FormatSelectionCommandArgs args, CommandExecutionContext executionContext)
-        {
-            SnapshotSpan span = args.TextView.Selection.SelectedSpans.FirstOrDefault();
-            FormatAsync(args.SubjectBuffer, span.Start, span.Length).FireAndForget();
-
-            return false;
-        }
-
         public static async Task<bool> FormatAsync(ITextBuffer buffer, int start, int length)
         {
-            TSqlStandardFormatterOptions options = await GetFormatterOptionsAsync();
+            TSqlStandardFormatterOptions options = await FormatterConfig.GetOptionsAsync(buffer.GetFileName());
             TSqlStandardFormatter formatter = new(options);
             SqlFormattingManager manager = new(formatter);
 
@@ -62,30 +51,6 @@ namespace SqlFormatter
             return true;
         }
 
-        private static async Task<TSqlStandardFormatterOptions> GetFormatterOptionsAsync()
-        {
-            General options = await General.GetLiveInstanceAsync();
-            return new()
-            {
-                KeywordStandardization = options.KeywordStandardization,
-                SpacesPerTab = options.SpacesPerTab,
-                ExpandCommaLists = options.ExpandCommaLists,
-                TrailingCommas = options.TrailingCommas,
-                SpaceAfterExpandedComma = options.SpaceAfterExpandedComma,
-                UppercaseKeywords = options.UppercaseKeywords,
-                BreakJoinOnSections = options.BreakJoinOnSections,
-                ExpandBooleanExpressions = options.ExpandBooleanExpressions,
-                ExpandBetweenConditions = options.ExpandBetweenConditions,
-                ExpandCaseStatements = options.ExpandCaseStatements,
-                ExpandInLists = options.ExpandInLists,
-                MaxLineWidth = options.MaxLineWidth,
-                IndentString = options.IndentString,
-                NewClauseLineBreaks = options.NewClauseLineBreaks,
-                NewStatementLineBreaks = options.NewStatementLineBreaks,
-            };
-        }
-
         public CommandState GetCommandState(FormatDocumentCommandArgs args) => CommandState.Available;
-        public CommandState GetCommandState(FormatSelectionCommandArgs args) => CommandState.Available;
     }
 }

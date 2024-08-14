@@ -50,7 +50,7 @@ namespace SqlFormatter
                     DocumentView document = await VS.Documents.GetActiveDocumentViewAsync();
                     ITextBuffer buffer = document.TextBuffer;
 
-                    await FormatCommandHandler2.FormatAsync(buffer, 0, buffer.CurrentSnapshot.Length);
+                    await FormatCommandHandler.FormatAsync(buffer, 0, buffer.CurrentSnapshot.Length);
 
                 }).FireAndForget();
             }

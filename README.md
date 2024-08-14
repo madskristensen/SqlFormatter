@@ -23,7 +23,31 @@ Invoke the *Format Document* command or `CTRL+K, CTRL+D` to format the document 
 
 ![After](art/after.png)
 
-## Options
+## .editorconfig support
+You can specify the configuration options in an `.editorconfig` file. Here's an example:
+
+```ini
+[*.sql]
+keyword_standardization = true
+spaces_per_tab = 4
+expand_comma_lists = true
+trailing_commas = true
+space_after_expanded_comma = true
+uppercase_keywords = false
+break_join_on_sections = false
+expand_boolean_expressions = true
+expand_between_conditions = false
+expand_case_statements = true
+expand_in_lists = true
+max_line_width = 999
+indent_string = "   "
+new_clause_line_breaks = true
+new_statement_line_breaks = true
+```
+
+When there are no .editorconfig files or the `[*.sql]` section is missing, the global options will be used.
+
+## Global options
 
 ![Options](art/options.png)
 
