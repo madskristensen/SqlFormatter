@@ -33,13 +33,14 @@ namespace SqlFormatter
             SqlFormattingManager manager = new(formatter);
 
             var hasErrors = false;
-            var formattedSql = manager.Format(buffer.CurrentSnapshot.GetText(start, length), ref hasErrors);
+            var text = buffer.CurrentSnapshot.GetText(start, length);
+            var formattedSql = manager.Format(text, ref hasErrors);
 
-            if (!hasErrors)
+            if (!hasErrors && text != formattedSql)
             {
                 using (ITextEdit edit = buffer.CreateEdit())
                 {
-                    _ = edit.Replace(start, length, formattedSql);
+                    _ = edit.Replace(start, length, formattedSql.Trim());
                     _ = edit.Apply();
                 }
 

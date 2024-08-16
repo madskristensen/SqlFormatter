@@ -23,6 +23,12 @@ Invoke the *Format Document* command or `CTRL+K, CTRL+D` to format the document 
 
 ![After](art/after.png)
 
+## Format strings
+In C# and other languages, you can invoke the formatter by selecting the text and right-click to select **Format SQL**. Or you can simply hit `Ctrl+K, Ctrl+Q`.
+
+![Context menu](art/context-menu.png)
+
+
 ## .editorconfig support
 You can specify the configuration options in an `.editorconfig` file. Here's an example:
 

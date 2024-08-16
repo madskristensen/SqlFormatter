@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\FormatCommandHandler.cs" />
+    <Compile Include="Commands\FormatSqlCommand.cs" />
     <Compile Include="FormatterConfig.cs" />
     <Compile Include="Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

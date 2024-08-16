@@ -7,12 +7,37 @@
   <Include href="VSGlobals.vsct"/>
 
   <Commands package="SqlFormatter">
+
+    <Groups>
+      <Group guid="SqlFormatter" id="FormatSqlGroup" priority="9999">
+        <Parent guid ="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="SqlFormatter" id="FormatSql" priority="100" type="Button">
+        <Parent guid="SqlFormatter" id="FormatSqlGroup"/>
+        <Icon guid="ImageCatalogGuid" id="SQLQueryChecked"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Format SQL</ButtonText>
+          <LocCanonicalName>SqlFormatter.FormatSQL</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
   </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="SqlFormatter" id="FormatSql" editor="guidVSStd97" key1="K" mod1="Control" key2="Q" mod2="Control" />
+  </KeyBindings>
 
   <Symbols>
     <GuidSymbol name="autoload" value="{81883f78-d33e-4fde-8a2c-6318c81d3c60}" />
     <GuidSymbol name="SqlFormatter" value="{370a4d64-9e03-4846-8b00-49fcb57d817e}">
-      
+      <IDSymbol name="FormatSql" value="100"/>
+      <IDSymbol name="FormatSqlGroup" value="1"/>
     </GuidSymbol>
   </Symbols>
 </CommandTable>

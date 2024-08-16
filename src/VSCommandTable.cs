@@ -23,6 +23,7 @@ namespace SqlFormatter
     /// </summary>
     internal sealed partial class PackageIds
     {
-
+        public const int FormatSql = 0x0064;
+        public const int FormatSqlGroup = 0x0001;
     }
 }

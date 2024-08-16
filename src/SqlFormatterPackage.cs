@@ -30,6 +30,8 @@ namespace SqlFormatter
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await this.RegisterCommandsAsync();
+
             _dte = await VS.GetRequiredServiceAsync<DTE, DTE2>();
 
             _formatDocumentCmd = _dte.Commands.Item("Edit.FormatDocument");
@@ -50,7 +52,7 @@ namespace SqlFormatter
                     DocumentView document = await VS.Documents.GetActiveDocumentViewAsync();
                     ITextBuffer buffer = document.TextBuffer;
 
-                    await FormatCommandHandler.FormatAsync(buffer, 0, buffer.CurrentSnapshot.Length);
+                    _ = await FormatCommandHandler.FormatAsync(buffer, 0, buffer.CurrentSnapshot.Length);
 
                 }).FireAndForget();
             }
