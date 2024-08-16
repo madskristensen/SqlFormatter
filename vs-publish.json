@@ -17,6 +17,10 @@
     {
       "pathOnDisk": "art/after.png",
       "targetPath": "art/after.png"
+    },
+    {
+      "pathOnDisk": "art/context-menu.png",
+      "targetPath": "art/context-menu.png"
     }
   ],
   "overview": "README.md",
