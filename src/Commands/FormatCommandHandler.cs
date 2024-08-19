@@ -13,10 +13,10 @@ namespace SqlFormatter
     [Name(nameof(FormatCommandHandler))]
     [ContentType("SQL")]
     [ContentType("SQL Server Tools")]
-    [Order(Before = "FormatCommandHandler")]
+    [Order(Before = DefaultOrderings.Lowest)]
     public class FormatCommandHandler : ICommandHandler<FormatDocumentCommandArgs>
     {
-        public static RatingPrompt _ratingPrompt = new("", Vsix.Name, General.Instance);
+        public static RatingPrompt _ratingPrompt = new("MadsKristensen.SqlFormatter", Vsix.Name, General.Instance);
         public string DisplayName => nameof(FormatCommandHandler);
 
         public bool ExecuteCommand(FormatDocumentCommandArgs args, CommandExecutionContext executionContext)

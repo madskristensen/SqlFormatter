@@ -22,7 +22,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>DefaultInvisible</CommandFlag>
         <Strings>
-          <ButtonText>Format SQL</ButtonText>
+          <ButtonText>Format SQL (selection)</ButtonText>
           <LocCanonicalName>SqlFormatter.FormatSQL</LocCanonicalName>
         </Strings>
       </Button>
