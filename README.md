@@ -15,6 +15,8 @@ Formats T-SQL code to a consistent and readable layout.
 
 Invoke the *Format Document* command or `CTRL+K, CTRL+D` to format the document using the settings specified in the options. If no settings has been modified, the default settings will be used.
 
+*Powered by the [Poor Man's T-SQL Formatter library](https://www.nuget.org/packages/PoorMansTSQLFormatterredux)*.
+
 **Before:**
 
 ![Before](art/before.png)
