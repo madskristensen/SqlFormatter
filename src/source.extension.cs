@@ -8,7 +8,7 @@ namespace SqlFormatter
     internal sealed partial class Vsix
     {
         public const string Id = "SqlFormatter.fdf96f87-bc61-43ec-bc52-50fd011fd54f";
-        public const string Name = "Sql Formatter";
+        public const string Name = "SQL Formatter";
         public const string Description = @"Adds support for the Format Document command for SQL files. Use Ctrl+K, Ctrl+D to execute the command to format the document. Configure the formatting behavior through options.";
         public const string Language = "en-US";
         public const string Version = "1.0.902";

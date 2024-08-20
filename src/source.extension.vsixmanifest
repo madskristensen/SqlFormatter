@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="SqlFormatter.fdf96f87-bc61-43ec-bc52-50fd011fd54f" Version="1.0.902" Language="en-US" Publisher="Mads Kristensen" />
-        <DisplayName>Sql Formatter</DisplayName>
+        <DisplayName>SQL Formatter</DisplayName>
         <Description xml:space="preserve">Adds support for the Format Document command for SQL files. Use Ctrl+K, Ctrl+D to execute the command to format the document. Configure the formatting behavior through options.</Description>
         <MoreInfo>https://github.com/madskristensen/SqlFormatter</MoreInfo>
         <License>Resources\LICENSE.txt</License>
@@ -14,9 +14,9 @@
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
-      <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
-        <ProductArchitecture>arm64</ProductArchitecture>
-      </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>arm64</ProductArchitecture>
+        </InstallationTarget>
     </Installation>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
