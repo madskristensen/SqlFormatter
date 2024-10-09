@@ -49,8 +49,8 @@ expand_case_statements = true
 expand_in_lists = true
 max_line_width = 999
 indent_string = "   "
-new_clause_line_breaks = true
-new_statement_line_breaks = true
+new_clause_line_breaks = 1
+new_statement_line_breaks = 2
 ```
 
 When there are no .editorconfig files or the `[*.sql]` section is missing, the global options will be used.
