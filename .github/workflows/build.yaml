@@ -3,7 +3,7 @@ name: "Build"
 permissions:
   actions: write
   contents: write
-  
+
 on:
   push:
     branches: [master]
@@ -11,19 +11,19 @@ on:
     branches: [master]
   workflow_dispatch:
     branches: [master]
-      
+
 jobs:
   build:
     outputs:
       version: ${{ steps.vsix_version.outputs.version-number }}
-    name: Build 
+    name: Build
     runs-on: windows-latest
     env:
       Configuration: Release
       DeployExtension: False
       VsixManifestPath: src\source.extension.vsixmanifest
       VsixManifestSourcePath: src\source.extension.cs
-      
+
     steps:
     - uses: actions/checkout@v4
 
@@ -40,7 +40,7 @@ jobs:
       with:
         manifest-file: ${{ env.VsixManifestPath }}
         vsix-token-source-file: ${{ env.VsixManifestSourcePath }}
-          
+
     - name: Build
       run: msbuild /v:m -restore /p:OutDir=\_built
 
@@ -79,7 +79,7 @@ jobs:
       - name: Tag and release
         if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]') }}
         id: tag_release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           body: release ${{ needs.build.outputs.version }}
           tag_name: ${{ needs.build.outputs.version }}
