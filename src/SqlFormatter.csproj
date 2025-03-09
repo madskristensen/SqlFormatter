@@ -45,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\SaveCommandHandler.cs" />
     <Compile Include="Commands\FormatCommandHandler.cs" />
     <Compile Include="Commands\FormatSqlCommand.cs" />
     <Compile Include="FormatterConfig.cs" />
