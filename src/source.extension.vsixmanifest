@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="SqlFormatter.70C3AE03-7E78-41F3-8FE0-11BF482F5F69" Version="0.0.1" Language="en-US" Publisher="ErikEJ" />
+    <Identity Id="SqlFormatter.70C3AE03-7E78-41F3-8FE0-11BF482F5F69" Version="0.0.2" Language="en-US" Publisher="ErikEJ" />
     <DisplayName>SQL Formatter for SSMS (preview)</DisplayName>
     <Description xml:space="preserve">Adds support for the Format Document command for SQL files. Use Ctrl+K, Ctrl+D to execute the command to format the document. Configure the formatting behavior through options.</Description>
     <MoreInfo>https://github.com/ErikEJ/SqlFormatter</MoreInfo>
