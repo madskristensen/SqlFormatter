@@ -1,0 +1,3 @@
+[$RootKey$\Languages\Language Services\EditorConfig\Schemas\SqlFormatter]
+"schema"="$PackageFolder$\sqlformatter-editorconfig-schema.json"
+"moniker"="KnownMonikers.SQLDatabase"

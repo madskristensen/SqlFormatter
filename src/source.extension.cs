@@ -12,7 +12,7 @@ namespace SqlFormatter
         public const string Name = "SQL Formatter";
         public const string Description = @"Adds support for the Format Document command for SQL files. Use Ctrl+K, Ctrl+D to execute the command to format the document. Configure the formatting behavior through options.";
         public const string Language = "en-US";
-        public const string Version = "1.0.902";
+        public const string Version = "1.0.903";
         public const string Author = "Mads Kristensen";
         public const string Tags = "sql, tsql, formatter, database";
         public const bool IsPreview = false;

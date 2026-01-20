@@ -1,0 +1,284 @@
+{
+  "properties": [
+    {
+      "name": "sql_version",
+      "description": "Determines the version of the T-SQL language to use.",
+      "values": [ "Sql80", "Sql90", "Sql100", "Sql110", "Sql120", "Sql130", "Sql140", "Sql150", "Sql160" ],
+      "defaultValue": [ "Sql160" ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "sql_engine_type",
+      "description": "Determines the SQL engine to use.",
+      "values": [ "All", "Engine", "Standalone" ],
+      "defaultValue": [ "All" ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "align_clause_bodies",
+      "description": "Align the bodies of clauses.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "align_column_definition_fields",
+      "description": "Align the fields of column definitions.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "align_set_clause_item",
+      "description": "Align the items in set clauses.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "allow_external_language_paths",
+      "description": "Allow paths to external languages.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "allow_external_library_paths",
+      "description": "Allow paths to external libraries.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "as_keyword_on_own_line",
+      "description": "Place the AS keyword on its own line.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "include_semicolons",
+      "description": "Include semicolons at the end of statements.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "indent_set_clause",
+      "description": "Indent the set clause.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "keyword_casing",
+      "description": "Set the casing for keywords.",
+      "values": [ "Uppercase", "Lowercase", "PascalCase" ],
+      "defaultValue": [ "Uppercase" ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "indentation_size",
+      "description": "Set the size of indentation.",
+      "values": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+      "defaultValue": [ 4 ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "indent_view_body",
+      "description": "Indent the body of views.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_insert_sources_list",
+      "description": "Format the sources list in insert statements as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_insert_targets_list",
+      "description": "Format the targets list in insert statements as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_select_elements_list",
+      "description": "Format the select elements list as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_set_clause_items",
+      "description": "Format the set clause items as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_view_columns_list",
+      "description": "Format the view columns list as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "multiline_where_predicates_list",
+      "description": "Format the where predicates list as multiline.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_close_parenthesis_in_multiline_list",
+      "description": "Insert a new line before the closing parenthesis in multiline lists.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_from_clause",
+      "description": "Insert a new line before the from clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_group_by_clause",
+      "description": "Insert a new line before the group by clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_having_clause",
+      "description": "Insert a new line before the having clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_join_clause",
+      "description": "Insert a new line before the join clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_offset_clause",
+      "description": "Insert a new line before the offset clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_open_parenthesis_in_multiline_list",
+      "description": "Insert a new line before the opening parenthesis in multiline lists.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_order_by_clause",
+      "description": "Insert a new line before the order by clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_output_clause",
+      "description": "Insert a new line before the output clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_where_clause",
+      "description": "Insert a new line before the where clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "new_line_before_window_clause",
+      "description": "Insert a new line before the window clause.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "newline_formatted_check_constraint",
+      "description": "Format check constraints with new lines.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "newline_formatted_index_definition",
+      "description": "Format index definitions with new lines.",
+      "values": [ true, false ],
+      "defaultValue": [ false ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "num_newlines_after_statement",
+      "description": "Set the number of new lines after a statement.",
+      "values": [ 0, 1, 2, 3, 4, 5 ],
+      "defaultValue": [ 1 ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "space_between_data_type_and_parameters",
+      "description": "Insert a space between data type and parameters.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    },
+    {
+      "name": "space_between_parameters_in_data_type",
+      "description": "Insert a space between parameters in data type.",
+      "values": [ true, false ],
+      "defaultValue": [ true ],
+      "severity": false,
+      "documentationLink": "https://github.com/madskristensen/SqlFormatter"
+    }
+  ]
+}
