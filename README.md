@@ -1,6 +1,6 @@
-[marketplace]: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.SqlFormatter
-[vsixgallery]: http://vsixgallery.com/extension/SqlFormatter.fdf96f87-bc61-43ec-bc52-50fd011fd54f/
-[repo]:https://github.com/madskristensen/SqlFormatter
+[marketplace]: <https://marketplace.visualstudio.com/items?itemName=MadsKristensen.SqlFormatter>
+[vsixgallery]: <http://vsixgallery.com/extension/SqlFormatter.fdf96f87-bc61-43ec-bc52-50fd011fd54f/>
+[repo]:<https://github.com/madskristensen/SqlFormatter>
 
 # SQL Formatter for Visual Studio
 
@@ -50,11 +50,13 @@ ORDER BY ProductName DESC;
 ```
 
 ## Format strings
+
 In C# and other languages, you can invoke the formatter by selecting the text and right-click to select **Format SQL**. Or you can simply hit `Ctrl+K, Ctrl+Q`.
 
 ![Context menu](art/context-menu.png)
 
 ## .editorconfig support
+
 You can specify the configuration options in an `.editorconfig` file. Here's an example:
 
 ```ini
@@ -107,11 +109,13 @@ When using the [EditorConfig Language Service](https://marketplace.visualstudio.
 ![Options](art/options.png)
 
 ## Keyword tooltips
+
 Hover the mouse cursor over any keyword or built in function and a tooltip appears. It contains a full description and examples formatted to your settings.
 
 ![Tooltips](art/tooltips.png)
 
 ## How can I help?
+
 If you enjoy using the extension, please give it a ★★★★★ rating on the [Visual Studio Marketplace][marketplace].
 
 Should you encounter bugs or if you have feature requests, head on over to the [GitHub repo][repo] to open an issue if one doesn't already exist.
