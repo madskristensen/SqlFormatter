@@ -70,6 +70,7 @@ as_keyword_on_own_line                              = true
 include_semicolons                                  = false
 indent_set_clause                                   = false
 keyword_casing                                      = uppercase|lowercase|pascalcase
+preserve_comments                                   = true
 indentation_size                                    = 4
 indent_view_body                                    = false
 multiline_insert_sources_list                       = true
@@ -123,3 +124,9 @@ Should you encounter bugs or if you have feature requests, head on over to the [
 Pull requests are also very welcome, since I can't always get around to fixing all bugs myself. This is a personal passion project, so my time is limited.
 
 Another way to help out is to [sponsor me on GitHub](https://github.com/sponsors/madskristensen).
+
+## Compatibility note
+
+- `preserve_comments` support exists in the extension.
+- It requires a host (`Visual Studio`/`SSMS`) `Microsoft.SqlServer.TransactSql.ScriptDom` assembly that exposes `SqlScriptGeneratorOptions.PreserveComments`.
+- On hosts with older ScriptDom builds, this setting is ignored.

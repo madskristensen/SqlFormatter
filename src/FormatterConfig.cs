@@ -8,9 +8,8 @@ namespace SqlFormatter
     internal static class FormatterConfig
     {
         /// <summary>
-        /// Try to get formatting options from the Visual Studio CodingConventionsSnapshot
-        /// exposed on the text view options. Falls back to file-based parsing when
-        /// the snapshot isn't available.
+        /// Try to get formatting options from the Visual Studio CodingConventionsSnapshot exposed on the text view
+        /// options. Falls back to file-based parsing when the snapshot isn't available.
         /// </summary>
         public static async Task<SqlScriptGeneratorOptions> GetOptionsAsync(ITextView textView)
         {
@@ -21,7 +20,7 @@ namespace SqlFormatter
                 {
                     General options = await General.GetLiveInstanceAsync();
 
-                    return new SqlScriptGeneratorOptions()
+                    var scriptOptions = new SqlScriptGeneratorOptions()
                     {
                         AlignClauseBodies = GetValue(conventions, "align_clause_bodies", options.AlignClauseBodies),
                         AlignColumnDefinitionFields = GetValue(conventions, "align_column_definition_fields", options.AlignColumnDefinitionFields),
@@ -59,6 +58,10 @@ namespace SqlFormatter
                         SqlEngineType = GetValue(conventions, "sql_engine_type", options.SqlEngineType),
                         SqlVersion = GetValue(conventions, "sql_version", options.SqlVersion),
                     };
+
+                    TrySetPreserveComments(scriptOptions, GetValue(conventions, "preserve_comments", options.PreserveComments));
+
+                    return scriptOptions;
                 }
             }
             catch (Exception ex)
@@ -111,6 +114,23 @@ namespace SqlFormatter
             }
 
             return defaultValue;
+        }
+
+        private static void TrySetPreserveComments(SqlScriptGeneratorOptions scriptOptions, bool preserveComments)
+        {
+            try
+            {
+                var property = typeof(SqlScriptGeneratorOptions).GetProperty("PreserveComments");
+
+                if (property?.CanWrite == true && property.PropertyType == typeof(bool))
+                {
+                    property.SetValue(scriptOptions, preserveComments);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Log();
+            }
         }
     }
 }
